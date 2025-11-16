@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>JobAssist</title>
+  <link rel="stylesheet" href="popup.css">
+</head>
+<body>
+  <div class="container">
+    <div class="header">
+      <h1>JobAssist</h1>
+      <p class="subtitle">Job Application Assistant</p>
+    </div>
+
+    <div class="stats" id="stats">
+      <div class="stat-item">
+        <span class="stat-value" id="fieldsDetected">-</span>
+        <span class="stat-label">Fields Detected</span>
+      </div>
+      <div class="stat-item">
+        <span class="stat-value" id="canFill">-</span>
+        <span class="stat-label">Can Autofill</span>
+      </div>
+    </div>
+
+    <div class="actions">
+      <button id="autofillBtn" class="btn btn-primary">
+        <span class="btn-icon">✨</span>
+        Autofill All Fields
+      </button>
+
+      <button id="clearBtn" class="btn btn-secondary">
+        <span class="btn-icon">🗑️</span>
+        Clear All
+      </button>
+    </div>
+
+    <div class="info" id="result" style="display: none;">
+      <div class="result-success" id="resultSuccess" style="display: none;">
+        <span>✅</span>
+        <span id="successMessage"></span>
+      </div>
+      <div class="result-error" id="resultError" style="display: none;">
+        <span>❌</span>
+        <span id="errorMessage"></span>
+      </div>
+    </div>
+
+    <div class="footer">
+      <button id="downloadLogsBtn" class="btn btn-small">
+        📥 Download Logs
+      </button>
+    </div>
+  </div>
+  <script src="popup.js"></script>
+</body>
+</html>

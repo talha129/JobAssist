@@ -1,0 +1,202 @@
+{
+  "personalInfo.firstName": {
+    "keywords": ["first name", "given name", "forename", "fname", "first"],
+    "patterns": ["^first", "given"],
+    "confidence": 0.95
+  },
+  "personalInfo.lastName": {
+    "keywords": ["last name", "surname", "family name", "lname", "last"],
+    "patterns": ["^last", "surname", "family"],
+    "confidence": 0.95
+  },
+  "personalInfo.fullName": {
+    "keywords": ["full name", "name", "legal name", "complete name", "your name"],
+    "patterns": ["^name$", "full name", "legal name"],
+    "confidence": 0.9
+  },
+  "personalInfo.preferredName": {
+    "keywords": ["preferred name", "nickname", "goes by", "prefer to be called"],
+    "patterns": ["preferred", "nickname"],
+    "confidence": 0.9
+  },
+  "personalInfo.email": {
+    "keywords": ["email", "e-mail", "email address", "electronic mail", "mail"],
+    "patterns": ["email", "e-mail", "^mail"],
+    "confidence": 0.98
+  },
+  "personalInfo.phone": {
+    "keywords": ["phone", "telephone", "phone number", "mobile", "cell", "contact number"],
+    "patterns": ["phone", "tel", "mobile", "cell"],
+    "confidence": 0.95
+  },
+  "personalInfo.linkedIn": {
+    "keywords": ["linkedin", "linkedin profile", "linkedin url", "linkedin account"],
+    "patterns": ["linkedin"],
+    "confidence": 0.98
+  },
+  "personalInfo.github": {
+    "keywords": ["github", "github profile", "github username", "github url"],
+    "patterns": ["github"],
+    "confidence": 0.98
+  },
+  "personalInfo.portfolio": {
+    "keywords": ["portfolio", "portfolio url", "portfolio website", "personal website"],
+    "patterns": ["portfolio", "website"],
+    "confidence": 0.85
+  },
+  "address.street": {
+    "keywords": ["street", "street address", "address line 1", "address 1", "address"],
+    "patterns": ["street", "address"],
+    "confidence": 0.9
+  },
+  "address.city": {
+    "keywords": ["city", "town"],
+    "patterns": ["^city$", "town"],
+    "confidence": 0.95
+  },
+  "address.state": {
+    "keywords": ["state", "province", "region"],
+    "patterns": ["^state$", "province"],
+    "confidence": 0.95
+  },
+  "address.zip": {
+    "keywords": ["zip", "zip code", "postal code", "postcode"],
+    "patterns": ["zip", "postal"],
+    "confidence": 0.95
+  },
+  "address.country": {
+    "keywords": ["country", "nation"],
+    "patterns": ["^country$"],
+    "confidence": 0.95
+  },
+  "education.institution": {
+    "keywords": ["school", "university", "college", "institution", "school name", "university name"],
+    "patterns": ["school", "university", "college", "institution"],
+    "confidence": 0.9
+  },
+  "education.degree": {
+    "keywords": ["degree", "degree type", "level of education", "education level", "highest degree"],
+    "patterns": ["degree", "education level"],
+    "confidence": 0.9
+  },
+  "education.field": {
+    "keywords": ["major", "field of study", "area of study", "discipline", "concentration"],
+    "patterns": ["major", "field", "study"],
+    "confidence": 0.9
+  },
+  "education.gpa": {
+    "keywords": ["gpa", "grade point average", "grades"],
+    "patterns": ["gpa", "grade point"],
+    "confidence": 0.98
+  },
+  "education.graduationDate": {
+    "keywords": ["graduation date", "expected graduation", "graduation year", "completion date"],
+    "patterns": ["graduation", "completion"],
+    "confidence": 0.9
+  },
+  "experience.company": {
+    "keywords": ["company", "employer", "organization", "company name", "current employer"],
+    "patterns": ["company", "employer", "organization"],
+    "confidence": 0.9
+  },
+  "experience.title": {
+    "keywords": ["job title", "title", "position", "role", "current position", "current role"],
+    "patterns": ["title", "position", "role"],
+    "confidence": 0.9
+  },
+  "experience.startDate": {
+    "keywords": ["start date", "from", "began", "employment start"],
+    "patterns": ["start", "from", "began"],
+    "confidence": 0.85
+  },
+  "experience.endDate": {
+    "keywords": ["end date", "to", "until", "employment end"],
+    "patterns": ["end", "to", "until"],
+    "confidence": 0.85
+  },
+  "experience.current": {
+    "keywords": ["current", "present", "currently employed", "current job"],
+    "patterns": ["current", "present"],
+    "confidence": 0.9
+  },
+  "experience.yearsOfExperience": {
+    "keywords": ["years of experience", "experience", "years experience", "work experience", "professional experience"],
+    "patterns": ["years.*experience", "experience.*years"],
+    "confidence": 0.9
+  },
+  "skills.primary": {
+    "keywords": ["skills", "top skills", "key skills", "core skills", "technical skills"],
+    "patterns": ["skills", "competencies"],
+    "confidence": 0.85
+  },
+  "skills.languages": {
+    "keywords": ["programming languages", "languages", "coding languages"],
+    "patterns": ["programming.*language", "languages"],
+    "confidence": 0.9
+  },
+  "summary.short": {
+    "keywords": ["summary", "professional summary", "about you", "bio", "introduction"],
+    "patterns": ["summary", "about", "bio"],
+    "confidence": 0.8
+  },
+  "preferences.salary": {
+    "keywords": ["salary", "compensation", "expected salary", "desired salary", "salary expectations"],
+    "patterns": ["salary", "compensation"],
+    "confidence": 0.9
+  },
+  "preferences.jobType": {
+    "keywords": ["job type", "employment type", "position type", "full time", "part time"],
+    "patterns": ["job.*type", "employment.*type"],
+    "confidence": 0.9
+  },
+  "preferences.workArrangement": {
+    "keywords": ["work arrangement", "remote", "on-site", "hybrid", "work location"],
+    "patterns": ["remote", "location", "arrangement"],
+    "confidence": 0.85
+  },
+  "preferences.startDate": {
+    "keywords": ["start date", "availability", "available to start", "when can you start"],
+    "patterns": ["start", "availability", "available"],
+    "confidence": 0.85
+  },
+  "preferences.sponsorship": {
+    "keywords": ["sponsorship", "visa sponsorship", "work authorization", "authorized to work"],
+    "patterns": ["sponsorship", "visa", "authorization"],
+    "confidence": 0.9
+  },
+  "preferences.relocation": {
+    "keywords": ["relocation", "willing to relocate", "open to relocation"],
+    "patterns": ["relocation", "relocate"],
+    "confidence": 0.95
+  },
+  "demographics.gender": {
+    "keywords": ["gender", "sex"],
+    "patterns": ["gender", "^sex$"],
+    "confidence": 0.95
+  },
+  "demographics.veteran": {
+    "keywords": ["veteran", "military", "veteran status"],
+    "patterns": ["veteran", "military"],
+    "confidence": 0.95
+  },
+  "demographics.disability": {
+    "keywords": ["disability", "disability status", "disabled"],
+    "patterns": ["disability", "disabled"],
+    "confidence": 0.95
+  },
+  "demographics.race": {
+    "keywords": ["race", "ethnicity", "race/ethnicity"],
+    "patterns": ["race", "ethnicity"],
+    "confidence": 0.95
+  },
+  "coverLetter": {
+    "keywords": ["cover letter", "letter", "why are you interested", "why do you want to work"],
+    "patterns": ["cover.*letter", "why.*interested"],
+    "confidence": 0.8
+  },
+  "resume": {
+    "keywords": ["resume", "cv", "curriculum vitae", "upload resume", "attach resume"],
+    "patterns": ["resume", "^cv$", "curriculum"],
+    "confidence": 0.95
+  }
+}

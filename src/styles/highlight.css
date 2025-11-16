@@ -1,0 +1,37 @@
+/**
+ * JobAssist Highlighting Styles
+ * Visual styles for highlighting input fields and their related text
+ */
+
+/* Highlight for related text elements (labels, helper text, etc.) */
+.jobassist-highlight {
+  background-color: rgba(255, 235, 59, 0.3) !important;
+  outline: 2px solid rgba(255, 193, 7, 0.6) !important;
+  outline-offset: 2px !important;
+  border-radius: 3px !important;
+  transition: all 0.2s ease-in-out !important;
+}
+
+/* Highlight for the input field itself */
+.jobassist-highlight-field {
+  border: 2px solid #2196F3 !important;
+  box-shadow: 0 0 0 3px rgba(33, 150, 243, 0.2) !important;
+  transition: all 0.2s ease-in-out !important;
+}
+
+/* Hover effect for highlighted text */
+.jobassist-highlight:hover {
+  background-color: rgba(255, 235, 59, 0.5) !important;
+  outline-color: rgba(255, 193, 7, 0.8) !important;
+}
+
+/* Hover effect for highlighted fields */
+.jobassist-highlight-field:hover {
+  box-shadow: 0 0 0 3px rgba(33, 150, 243, 0.4) !important;
+}
+
+/* Focus state for fields */
+.jobassist-highlight-field:focus {
+  border-color: #1976D2 !important;
+  box-shadow: 0 0 0 4px rgba(25, 118, 210, 0.3) !important;
+}

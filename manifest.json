@@ -1,0 +1,48 @@
+{
+  "manifest_version": 3,
+  "name": "JobAssist",
+  "version": "0.2.0",
+  "description": "Job application assistant that highlights and auto-fills form fields intelligently",
+  "permissions": [
+    "activeTab",
+    "scripting"
+  ],
+  "action": {
+    "default_popup": "src/popup/popup.html",
+    "default_title": "JobAssist - Autofill Job Applications"
+  },
+  "background": {
+    "service_worker": "src/background/background.js"
+  },
+  "web_accessible_resources": [
+    {
+      "resources": [
+        "src/data/user-profile.json",
+        "src/data/fieldSynonyms.json"
+      ],
+      "matches": ["<all_urls>"]
+    }
+  ],
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": [
+        "src/utils/logger.js",
+        "src/utils/stringMatcher.js",
+        "src/utils/analytics.js",
+        "src/utils/feedbackCollector.js",
+        "src/core/fieldDetector.js",
+        "src/core/textExtractor.js",
+        "src/core/fieldClassifier.js",
+        "src/core/profileMatcher.js",
+        "src/strategies/baseFiller.js",
+        "src/strategies/textFiller.js",
+        "src/strategies/selectFiller.js",
+        "src/core/autofillController.js",
+        "src/content/contentScript-new.js"
+      ],
+      "css": ["src/styles/highlight.css"],
+      "run_at": "document_idle"
+    }
+  ]
+}

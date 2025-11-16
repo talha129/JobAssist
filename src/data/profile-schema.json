@@ -1,0 +1,105 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "JobAssist User Profile Schema",
+  "description": "Semantic profile structure for autofilling job application forms",
+  "type": "object",
+  "version": "1.0.0",
+  "properties": {
+    "personalInfo": {
+      "type": "object",
+      "description": "Basic personal identification information",
+      "properties": {
+        "fullName": "string",
+        "firstName": "string",
+        "middleName": "string",
+        "lastName": "string",
+        "preferredName": "string",
+        "email": "string",
+        "phone": "string",
+        "alternatePhone": "string",
+        "linkedIn": "string",
+        "github": "string",
+        "portfolio": "string",
+        "website": "string"
+      }
+    },
+    "address": {
+      "type": "object",
+      "description": "Current and permanent addresses",
+      "properties": {
+        "current": "Address",
+        "permanent": "Address"
+      }
+    },
+    "education": {
+      "type": "array",
+      "description": "Academic history, ordered by most recent first",
+      "items": "Education"
+    },
+    "experience": {
+      "type": "array",
+      "description": "Work history, ordered by most recent first",
+      "items": "Experience"
+    },
+    "skills": {
+      "type": "object",
+      "description": "Technical and soft skills, categorized",
+      "properties": {
+        "technical": "object",
+        "languages": "array",
+        "frameworks": "array",
+        "tools": "array",
+        "soft": "array"
+      }
+    },
+    "summary": {
+      "type": "object",
+      "description": "Professional summaries of various lengths",
+      "properties": {
+        "short": "string (50-100 words)",
+        "medium": "string (100-200 words)",
+        "long": "string (200-500 words)",
+        "elevator": "string (1-2 sentences)"
+      }
+    },
+    "preferences": {
+      "type": "object",
+      "description": "Job search preferences",
+      "properties": {
+        "jobTypes": "array",
+        "workArrangement": "array",
+        "salaryExpectation": "object",
+        "locations": "array",
+        "willingToRelocate": "boolean",
+        "sponsorshipRequired": "boolean",
+        "securityClearance": "string",
+        "startDate": "object"
+      }
+    },
+    "demographics": {
+      "type": "object",
+      "description": "Optional demographic information (EEO)",
+      "properties": {
+        "veteran": "string",
+        "disability": "string",
+        "gender": "string",
+        "race": "string"
+      }
+    },
+    "certifications": {
+      "type": "array",
+      "description": "Professional certifications and licenses",
+      "items": "Certification"
+    },
+    "projects": {
+      "type": "array",
+      "description": "Notable projects or publications",
+      "items": "Project"
+    },
+    "references": {
+      "type": "array",
+      "description": "Professional references",
+      "items": "Reference"
+    }
+  }
+}
