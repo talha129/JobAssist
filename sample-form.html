@@ -1,0 +1,456 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sample Job Application - Test JobAssist</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      background: #f5f5f5;
+      padding: 20px;
+    }
+
+    .container {
+      max-width: 800px;
+      margin: 0 auto;
+      background: white;
+      border-radius: 8px;
+      padding: 40px;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    }
+
+    h1 {
+      color: #333;
+      margin-bottom: 10px;
+    }
+
+    .subtitle {
+      color: #666;
+      margin-bottom: 30px;
+    }
+
+    .section {
+      margin-bottom: 40px;
+    }
+
+    .section h2 {
+      color: #444;
+      font-size: 20px;
+      margin-bottom: 20px;
+      padding-bottom: 10px;
+      border-bottom: 2px solid #007bff;
+    }
+
+    .subsection {
+      margin-bottom: 30px;
+      padding: 20px;
+      background: #f9f9f9;
+      border-radius: 6px;
+    }
+
+    .subsection h3 {
+      color: #555;
+      font-size: 16px;
+      margin-bottom: 15px;
+    }
+
+    .form-group {
+      margin-bottom: 20px;
+    }
+
+    label {
+      display: block;
+      font-weight: 600;
+      color: #333;
+      margin-bottom: 6px;
+    }
+
+    label .required {
+      color: #dc3545;
+    }
+
+    input[type="text"],
+    input[type="email"],
+    input[type="tel"],
+    input[type="url"],
+    input[type="date"],
+    select,
+    textarea {
+      width: 100%;
+      padding: 10px 12px;
+      border: 1px solid #ddd;
+      border-radius: 4px;
+      font-size: 14px;
+      font-family: inherit;
+    }
+
+    input:focus,
+    select:focus,
+    textarea:focus {
+      outline: none;
+      border-color: #007bff;
+    }
+
+    textarea {
+      resize: vertical;
+      min-height: 100px;
+    }
+
+    .helper-text {
+      font-size: 12px;
+      color: #666;
+      margin-top: 4px;
+    }
+
+    .form-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 20px;
+    }
+
+    .radio-group {
+      margin-top: 8px;
+    }
+
+    .radio-group label {
+      display: flex;
+      align-items: center;
+      font-weight: normal;
+      margin-bottom: 8px;
+      cursor: pointer;
+    }
+
+    .radio-group input {
+      width: auto;
+      margin-right: 8px;
+    }
+
+    button[type="submit"] {
+      background: #007bff;
+      color: white;
+      padding: 12px 30px;
+      border: none;
+      border-radius: 4px;
+      font-size: 16px;
+      font-weight: 600;
+      cursor: pointer;
+    }
+
+    button[type="submit"]:hover {
+      background: #0056b3;
+    }
+
+    .test-info {
+      background: #fff3cd;
+      border: 1px solid #ffc107;
+      border-radius: 6px;
+      padding: 15px;
+      margin-bottom: 30px;
+    }
+
+    .test-info h3 {
+      color: #856404;
+      margin-bottom: 10px;
+    }
+
+    .test-info p {
+      color: #856404;
+      font-size: 14px;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="test-info">
+      <h3>🧪 JobAssist Test Form</h3>
+      <p>Load the JobAssist extension and click "Autofill Form" to test the LLM-based autofill.</p>
+    </div>
+
+    <h1>Senior Software Engineer Application</h1>
+    <p class="subtitle">Tech Corp - San Francisco, CA</p>
+
+    <form id="jobApplicationForm">
+      <!-- Personal Information -->
+      <div class="section">
+        <h2>Personal Information</h2>
+
+        <div class="form-row">
+          <div class="form-group">
+            <label for="firstName">First Name <span class="required">*</span></label>
+            <input type="text" id="firstName" name="firstName" required>
+          </div>
+
+          <div class="form-group">
+            <label for="lastName">Last Name <span class="required">*</span></label>
+            <input type="text" id="lastName" name="lastName" required>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="email">Email Address <span class="required">*</span></label>
+          <input type="email" id="email" name="email" required>
+        </div>
+
+        <div class="form-group">
+          <label for="phone">Phone Number <span class="required">*</span></label>
+          <input type="tel" id="phone" name="phone" required>
+        </div>
+
+        <div class="form-group">
+          <label for="linkedin">LinkedIn Profile</label>
+          <input type="url" id="linkedin" name="linkedin">
+        </div>
+
+        <div class="form-group">
+          <label for="github">GitHub Profile</label>
+          <input type="url" id="github" name="github">
+        </div>
+      </div>
+
+      <!-- Address -->
+      <div class="section">
+        <h2>Address</h2>
+
+        <div class="form-group">
+          <label for="street">Street Address</label>
+          <input type="text" id="street" name="street">
+        </div>
+
+        <div class="form-row">
+          <div class="form-group">
+            <label for="city">City</label>
+            <input type="text" id="city" name="city">
+          </div>
+
+          <div class="form-group">
+            <label for="state">State</label>
+            <select id="state" name="state">
+              <option value="">Select State</option>
+              <option value="AL">Alabama</option>
+              <option value="CA">California</option>
+              <option value="FL">Florida</option>
+              <option value="NY">New York</option>
+              <option value="TX">Texas</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="zipCode">ZIP Code</label>
+          <input type="text" id="zipCode" name="zipCode">
+        </div>
+      </div>
+
+      <!-- Work Experience -->
+      <div class="section">
+        <h2>Work Experience</h2>
+
+        <div class="subsection">
+          <h3>Current Position</h3>
+
+          <div class="form-group">
+            <label for="currentCompany">Company Name</label>
+            <input type="text" id="currentCompany" name="currentCompany">
+          </div>
+
+          <div class="form-group">
+            <label for="currentPosition">Position/Title</label>
+            <input type="text" id="currentPosition" name="currentPosition">
+          </div>
+
+          <div class="form-group">
+            <label for="currentLocation">Location</label>
+            <input type="text" id="currentLocation" name="currentLocation" placeholder="City, State">
+            <small class="helper-text">Where is this job located?</small>
+          </div>
+
+          <div class="form-row">
+            <div class="form-group">
+              <label for="currentStartDate">Start Date</label>
+              <input type="date" id="currentStartDate" name="currentStartDate">
+            </div>
+
+            <div class="form-group">
+              <label>Currently Working Here?</label>
+              <div class="radio-group">
+                <label>
+                  <input type="radio" name="currentlyWorking" value="yes">
+                  Yes
+                </label>
+                <label>
+                  <input type="radio" name="currentlyWorking" value="no">
+                  No
+                </label>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="subsection">
+          <h3>Previous Position</h3>
+
+          <div class="form-group">
+            <label for="previousCompany">Company Name</label>
+            <input type="text" id="previousCompany" name="previousCompany">
+          </div>
+
+          <div class="form-group">
+            <label for="previousPosition">Position/Title</label>
+            <input type="text" id="previousPosition" name="previousPosition">
+          </div>
+
+          <div class="form-group">
+            <label for="previousLocation">Location</label>
+            <input type="text" id="previousLocation" name="previousLocation">
+            <small class="helper-text">Where was this job located?</small>
+          </div>
+
+          <div class="form-row">
+            <div class="form-group">
+              <label for="previousStartDate">Start Date</label>
+              <input type="date" id="previousStartDate" name="previousStartDate">
+            </div>
+
+            <div class="form-group">
+              <label for="previousEndDate">End Date</label>
+              <input type="date" id="previousEndDate" name="previousEndDate">
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Education -->
+      <div class="section">
+        <h2>Education</h2>
+
+        <div class="form-group">
+          <label for="institution">University/College</label>
+          <input type="text" id="institution" name="institution">
+        </div>
+
+        <div class="form-row">
+          <div class="form-group">
+            <label for="degree">Degree</label>
+            <select id="degree" name="degree">
+              <option value="">Select Degree</option>
+              <option value="Bachelor of Science">Bachelor of Science</option>
+              <option value="Bachelor of Arts">Bachelor of Arts</option>
+              <option value="Master of Science">Master of Science</option>
+              <option value="PhD">PhD</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label for="fieldOfStudy">Field of Study</label>
+            <input type="text" id="fieldOfStudy" name="fieldOfStudy">
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="gpa">GPA</label>
+          <input type="text" id="gpa" name="gpa">
+        </div>
+      </div>
+
+      <!-- Skills -->
+      <div class="section">
+        <h2>Skills</h2>
+
+        <div class="form-group">
+          <label for="technicalSkills">Technical Skills</label>
+          <textarea id="technicalSkills" name="technicalSkills"></textarea>
+        </div>
+
+        <div class="form-group">
+          <label for="yearsExperience">Years of Experience</label>
+          <select id="yearsExperience" name="yearsExperience">
+            <option value="">Select Years</option>
+            <option value="0-1">0-1 years</option>
+            <option value="1-3">1-3 years</option>
+            <option value="3-5">3-5 years</option>
+            <option value="5-7">5-7 years</option>
+            <option value="7-10">7-10 years</option>
+            <option value="10+">10+ years</option>
+          </select>
+        </div>
+      </div>
+
+      <!-- Preferences -->
+      <div class="section">
+        <h2>Job Preferences</h2>
+
+        <div class="form-group">
+          <label for="desiredPosition">Desired Position</label>
+          <input type="text" id="desiredPosition" name="desiredPosition">
+        </div>
+
+        <div class="form-group">
+          <label>Remote Work?</label>
+          <div class="radio-group">
+            <label>
+              <input type="radio" name="remoteWork" value="yes">
+              Yes
+            </label>
+            <label>
+              <input type="radio" name="remoteWork" value="no">
+              No
+            </label>
+          </div>
+        </div>
+      </div>
+
+      <!-- Legal -->
+      <div class="section">
+        <h2>Legal Authorization</h2>
+
+        <div class="form-group">
+          <label>Work Authorization in US?</label>
+          <div class="radio-group">
+            <label>
+              <input type="radio" name="workAuth" value="yes">
+              Yes
+            </label>
+            <label>
+              <input type="radio" name="workAuth" value="no">
+              No
+            </label>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label>Require Sponsorship?</label>
+          <div class="radio-group">
+            <label>
+              <input type="radio" name="sponsorship" value="yes">
+              Yes
+            </label>
+            <label>
+              <input type="radio" name="sponsorship" value="no">
+              No
+            </label>
+          </div>
+        </div>
+      </div>
+
+      <button type="submit">Submit Application</button>
+    </form>
+  </div>
+
+  <script>
+    document.getElementById('jobApplicationForm').addEventListener('submit', function(e) {
+      e.preventDefault();
+      alert('Form submission prevented (test form)');
+      console.log('Form data:', new FormData(e.target));
+    });
+
+    console.log('Sample form ready! Fields:', document.querySelectorAll('input, select, textarea').length);
+  </script>
+</body>
+</html>

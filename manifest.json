@@ -1,0 +1,48 @@
+{
+  "manifest_version": 3,
+  "name": "JobAssist - LLM Autofill",
+  "version": "2.0.0",
+  "description": "AI-powered job application autofill using LLM for intelligent form filling",
+
+  "permissions": [
+    "storage",
+    "activeTab",
+    "scripting"
+  ],
+
+  "host_permissions": [
+    "https://api.openai.com/*"
+  ],
+
+  "action": {
+    "default_popup": "src/popup/popup.html"
+  },
+
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": [
+        "src/services/logger.js",
+        "src/services/formCaptureService.js",
+        "src/services/contextEnricher.js",
+        "src/services/llmValueProvider.js",
+        "src/services/universalFiller.js",
+        "src/services/llmAutofillOrchestrator.js",
+        "src/content/content.js",
+        "tests/robustness-test.js"
+      ],
+      "run_at": "document_idle"
+    }
+  ],
+
+  "web_accessible_resources": [
+    {
+      "resources": [
+        "icons/*",
+        "src/data/user-profile.json",
+        "src/data/user-profile.talha.json"
+      ],
+      "matches": ["<all_urls>"]
+    }
+  ]
+}

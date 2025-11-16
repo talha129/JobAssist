@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>JobAssist - LLM Autofill</title>
+  <link rel="stylesheet" href="popup.css">
+</head>
+<body>
+  <div class="container">
+    <!-- Header -->
+    <div class="header">
+      <h1>JobAssist</h1>
+      <p class="subtitle">AI-Powered Autofill</p>
+    </div>
+
+    <!-- Status Section -->
+    <div id="statusSection" class="section">
+      <div id="statusMessage" class="status-message">
+        Ready to autofill
+      </div>
+    </div>
+
+    <!-- Main Actions -->
+    <div class="section">
+      <button id="autofillBtn" class="btn btn-primary">
+        <span class="btn-icon">✨</span>
+        Autofill Form
+      </button>
+
+      <button id="previewBtn" class="btn btn-secondary">
+        <span class="btn-icon">👀</span>
+        Preview Autofill
+      </button>
+    </div>
+
+    <!-- Preview Panel (hidden by default) -->
+    <div id="previewPanel" class="section preview-panel" style="display: none;">
+      <h3>Autofill Preview</h3>
+      <div id="previewContent"></div>
+      <button id="confirmFillBtn" class="btn btn-success">Confirm & Fill</button>
+      <button id="cancelPreviewBtn" class="btn btn-cancel">Cancel</button>
+    </div>
+
+    <!-- Configuration Section -->
+    <div class="section config-section">
+      <h3>Configuration</h3>
+
+      <!-- API Key -->
+      <div class="form-group">
+        <label for="apiKeyInput">OpenRouter API Key:</label>
+        <div class="input-group">
+          <input type="password" id="apiKeyInput" placeholder="sk-or-...">
+          <button id="toggleApiKeyBtn" class="btn-icon-only" title="Show/Hide">👁️</button>
+        </div>
+        <small class="help-text">
+          Get your API key from <a href="https://openrouter.ai/keys" target="_blank">openrouter.ai/keys</a>
+        </small>
+      </div>
+
+      <!-- User Profile -->
+      <div class="form-group">
+        <label>User Profile:</label>
+        <div id="profileStatus" class="profile-status"></div>
+        <small class="help-text">
+          Edit your profile in src/data/user-profile.json
+        </small>
+      </div>
+
+      <!-- Save Configuration -->
+      <button id="saveConfigBtn" class="btn btn-primary">Save Configuration</button>
+    </div>
+
+    <!-- Analytics Section -->
+    <div class="section">
+      <h3>Recent Activity</h3>
+      <div id="analyticsSection">
+        <p class="help-text">No recent autofill activity</p>
+      </div>
+      <button id="viewAnalyticsBtn" class="btn btn-secondary">View Full Analytics</button>
+    </div>
+
+    <!-- Utilities -->
+    <div class="section">
+      <h3>Utilities</h3>
+      <button id="clearCacheBtn" class="btn btn-secondary">Clear LLM Cache</button>
+      <button id="downloadLogsBtn" class="btn btn-secondary">
+        <span class="btn-icon">📥</span>
+        Download All Logs
+      </button>
+      <button id="clearLogsBtn" class="btn btn-secondary">Clear All Logs</button>
+    </div>
+
+    <!-- Footer -->
+    <div class="footer">
+      <p>JobAssist v2.0.0 - LLM Edition</p>
+    </div>
+  </div>
+
+  <script src="popup.js"></script>
+</body>
+</html>
